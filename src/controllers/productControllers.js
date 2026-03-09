@@ -45,3 +45,11 @@ exports.updateProduct = async (req, res) => {
     product
   });
 };
+
+exports.deleteProduct = async (req, res) => {
+  await Product.findByIdAndDelete(req.params.id);
+
+  res.json({
+    message: "Product deleted successfully"
+  });
+};
