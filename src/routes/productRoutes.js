@@ -10,7 +10,7 @@ const {
 
 router.get("/products", getProducts);
 router.post("/product", addProduct);
-router.get("/products/:id", getProductById);
+router.get("/product/:id", getProductById);
 router.put("/product/:id", updateProduct);
 router.delete("/product/:id", deleteProduct);
 
