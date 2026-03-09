@@ -22,3 +22,7 @@ exports.updateCart = async (req, res) => {
   res.json(cart);
 };
 
+exports.deleteCart = async (req, res) => {
+  await Cart.findByIdAndDelete(req.params.id);
+  res.json({ message: "Item removed" });
+};
