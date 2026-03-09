@@ -3,6 +3,6 @@ const auth = require("../middleware/authMiddleware");
 const { addToCart, updateCart, deleteCart } = require("../controllers/cartController");
 
 router.post("/cart", auth, addToCart);
-
+router.put("/cart/:id", auth, updateCart);
 
 module.exports = router;

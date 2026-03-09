@@ -12,3 +12,13 @@ exports.addToCart = async (req, res) => {
   res.json(cart);
 };
 
+exports.updateCart = async (req, res) => {
+  const cart = await Cart.findByIdAndUpdate(
+    req.params.id,
+    { quantity: req.body.quantity },
+    { new: true }
+  );
+
+  res.json(cart);
+};
+
