@@ -1,5 +1,7 @@
 const Cart = require("../models/Cart");
 
+
+// add-to-cart 
 exports.addToCart = async (req, res) => {
   const { productId, quantity } = req.body;
 
@@ -12,6 +14,7 @@ exports.addToCart = async (req, res) => {
   res.json(cart);
 };
 
+// update cart 
 exports.updateCart = async (req, res) => {
   const cart = await Cart.findByIdAndUpdate(
     req.params.id,
@@ -22,6 +25,7 @@ exports.updateCart = async (req, res) => {
   res.json(cart);
 };
 
+// delete cart 
 exports.deleteCart = async (req, res) => {
   await Cart.findByIdAndDelete(req.params.id);
   res.json({ message: "Item removed" });
